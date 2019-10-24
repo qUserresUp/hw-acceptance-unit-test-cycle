@@ -24,3 +24,8 @@ Then /I should see all the movies/ do
     step %{I should see "#{movie.title}"}
   end
 end
+
+Then(/^the director of "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
+  page.should have_content(arg1)
+  page.should have_content(arg2)
+end
